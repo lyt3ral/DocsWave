@@ -110,7 +110,7 @@ export default function TextEditor(props: Props) {
   return (
     <div
       id="container"
-      className="text-white h-5/6 w-4/6 mx-auto"
+      className="text-white h-screen w-4/6 mx-auto"
       ref={wrapperRef}
     ></div>
   );

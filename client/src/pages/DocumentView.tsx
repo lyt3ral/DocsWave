@@ -4,8 +4,9 @@ import axios from "../utils/axios";
 import { Document } from "../types/document";
 import { Socket } from "socket.io-client";
 import Editor from "../components/Editor";
-import { Lock } from "lucide-react";
+import { Share } from "lucide-react";
 import ShareModal from "../components/ShareModal";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   socket: Socket;
@@ -53,24 +54,25 @@ const DocumentView = (props: Props) => {
   return (
     <div className="h-full w-full p-10 text-white flex flex-col items-center gap-5 mb-20">
       <h1
-        className="text-3xl mb-3 border-b-white border-b-2 cursor-pointer"
+        className="text-3xl mb-3 border-b-2 cursor-pointer font-bold "
         onClick={() => navigate("/")}
       >
         DocWave ✨
       </h1>
       <div className="h-full w-full">
         <div className="flex justify-between mb-6">
-          <div className="text-2xl mx-auto">{document?.title}</div>
-          <button className="mr-5 flex gap-4" onClick={handleShareClick}>
+          <div className="text-2xl ">{document?.title}</div>
+          <Button className="mr-5 flex gap-2" onClick={handleShareClick}>
             {permission === undefined ? (
               <>
-                <Lock size={20} className="mt-1" />
+                <Share size={20} className="" />
                 <div className="text-lg">Share</div>
               </>
             ) : (
               <></>
             )}
-          </button>
+          </Button>
+          
           {showModal && (
             <ShareModal
               onClose={handleModalClose}

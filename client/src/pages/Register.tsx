@@ -24,7 +24,7 @@ const Register = () => {
         <h1 className="text-white text-2xl mb-4">Register</h1>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             className="w-full bg-gray-700 rounded-md px-3 py-2 mb-2 text-white"
             onChange={(e) => setEmail(e.target.value)}
